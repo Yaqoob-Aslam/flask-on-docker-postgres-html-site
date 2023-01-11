@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, request,render_template
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -19,5 +19,10 @@ class User(db.Model):
         self.email = email
 
 @app.route("/")
-def hello_world():
-    return jsonify(hello="world")
+def hello():
+  
+   return render_template('index.html')
+
+# if __name__ == "__main__":
+#    app.run(debug=True)
+
